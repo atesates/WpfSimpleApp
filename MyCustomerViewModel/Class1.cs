@@ -17,7 +17,7 @@ namespace MyCustomerViewModel
 
         public CustViewModel()
         {
-            ocammand = new BtnClick(CalculateTax, IsValid);
+            ocammand = new BtnClick(CalculateTax, IsValid);//this btnClick class can be used by every ViewModel
         }
         public bool IsValid()
         {
@@ -113,13 +113,13 @@ namespace MyCustomerViewModel
 
     public class BtnClick : ICommand
     {
-        //private CustViewModel obj;//actually we dont need whole object, for reusability we will use delegates
+        //private CustViewModel obj;//actually we dont need whole object, for reusability we will use delegates//decouple vıewmodel from command
         private Action WhatToExecute;//Delegate
-        private Func<bool> WhenToExecute;//Delegate
+        private Func<bool> WhetherToExecute;//Delegate
         public BtnClick(Action What, Func<bool> When)
         {
             WhatToExecute = What;
-            WhenToExecute = When;
+            WhetherToExecute = When;
         }
 
         public void Refresh()
@@ -134,7 +134,7 @@ namespace MyCustomerViewModel
 
         public bool CanExecute(object parameter)
         {
-            return WhenToExecute();
+            return WhetherToExecute();
         }
 
         public void Execute(object parameter)
