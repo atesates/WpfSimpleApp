@@ -11,17 +11,21 @@
         <custns:CustViewModel x:Key="custobj"  />
     </Window.Resources>
     <Grid>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left"  Margin="200,116,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding txtName, Source={StaticResource custobj}}"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left"  Margin="200,116,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" 
+                 Text="{Binding txtName, Source={StaticResource custobj}}"/>
         <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="200,153,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
                  Text="{Binding txtAmount, Source={StaticResource custobj}}"/>
-        <Label x:Name="lblBuyingHabbits"  HorizontalAlignment="Left" Margin="200,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,0.065" Height="15" Width="118" Background="{Binding lblAmountColor, Mode=OneWay, Source={StaticResource custobj}}"/>
+        <Label x:Name="lblBuyingHabbits"  HorizontalAlignment="Left" Margin="200,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,0.065" Height="15" Width="118" 
+               Background="{Binding lblAmountColor, Mode=OneWay, Source={StaticResource custobj}}"/>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="202,290,0,0" VerticalAlignment="Top" Width="116"
-                Click="Button_Click" Command="{Binding BtnClick, Mode=OneWay, Source={StaticResource custobj}}"/>
+                Click="Button_Click"
+                Command="{Binding BtnClick, Mode=OneWay, Source={StaticResource custobj}}"/>
         <Label Content="Customer Name" HorizontalAlignment="Left" Margin="77,112,0,0" VerticalAlignment="Top" Width="98"/>
         <Label Content="Sales Amount" HorizontalAlignment="Left" Margin="77,153,0,0" VerticalAlignment="Top"/>
         <Label Content="Buying Habbits" HorizontalAlignment="Left" Margin="77,188,0,0" VerticalAlignment="Top"/>
         <Label Content="Married" HorizontalAlignment="Left" Margin="77,229,0,0" VerticalAlignment="Top"/>
-        <CheckBox  HorizontalAlignment="Left" Margin="202,235,0,0" VerticalAlignment="Top" IsChecked="{Binding isMarried, Source={StaticResource custobj}}"/>
+        <CheckBox  HorizontalAlignment="Left" Margin="202,235,0,0" VerticalAlignment="Top"
+                   IsChecked="{Binding isMarried, Source={StaticResource custobj}}"/>
         <Label  Content="{Binding txtTax, Mode=OneWay, Source={StaticResource custobj}}" HorizontalAlignment="Left" Margin="200,328,0,0" VerticalAlignment="Top" Width="110"/>
         <Label Content="Tax" HorizontalAlignment="Left" Margin="77,328,0,0" VerticalAlignment="Top"/>
 
